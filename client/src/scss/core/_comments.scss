@@ -1,0 +1,15 @@
+.comment-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.commented-by{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.comment-time{
+    font-weight: normal;
+    font-size: 10px;
+    margin-left: 7px;
+}

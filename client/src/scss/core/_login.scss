@@ -1,0 +1,30 @@
+.auth-container{
+    display: flex;
+    height: 100vh;
+}
+.form-container{
+    flex-grow: 1;
+    display: flex;
+    // align-items: center;
+    padding: 30px;
+    flex-direction: column;
+}
+.form-container h1{
+    font-size: 40px;
+}
+.main-form{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    // justify-content: center;
+}
+.showcase-container{
+    flex-grow: 1;
+    background: linear-gradient(0deg, rgba(30, 31, 30, 0.3), rgba(50, 47, 47, 0.3)), url('../../static/media/showcase.jpg');
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

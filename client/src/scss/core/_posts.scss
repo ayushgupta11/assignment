@@ -1,0 +1,27 @@
+.posts-container{
+    margin: 20px;
+    // width: 100%;
+}
+.new-post-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-cards{
+    margin: 5px;
+}
+.post-time{
+    font-size: 12px;
+}
+.post-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-header-left{
+    display: flex;
+    align-items: center;
+}
+.post-details{
+    margin-left: 10px;
+}
