@@ -1,5 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## For building app
+```
+npm run build:app
+Make sure you have cordova installed globally on your system
+Copy config.xml in cordova folder
+Run cordova platform add android
+Run cordova build android
+```
+
 ## Available Scripts
 
 In the project directory, you can run:

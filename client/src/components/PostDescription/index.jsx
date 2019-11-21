@@ -39,13 +39,17 @@ export default class PostDescription extends Component {
             })
         })
     }
-    addComment = (content) => {
-        postAuth('comments/add', {
+    addComment = (content, replyTo) => {
+        let requestData = {
             data:{
                 content,
                 postId: this.props.post._id
             }
-        }).then((response) => {
+        }
+        if(replyTo != null){
+            requestData['data']['replyTo'] = replyTo
+        }
+        postAuth('comments/add', requestData).then((response) => {
             console.log(response)
         }).catch((error) => {
             console.log(error)
@@ -59,10 +63,11 @@ export default class PostDescription extends Component {
                 onClose={this.props.onClose}
                 visible={this.props.drawerVisible}
                 width={400}
+                className="post-description"
             >
                 {
                     post.hasOwnProperty('user') ?
-                    <Post post={post} user={post.user[0]} computeTime={this.props.computeTime} hideView={true} />
+                    <Post post={post} user={post.user[0]} hideActions={true} computeTime={this.props.computeTime} hideView={true} />
                     : null
                 }
                 {

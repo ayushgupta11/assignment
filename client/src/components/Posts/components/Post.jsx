@@ -1,8 +1,8 @@
 import React from 'react'
-import { Card } from 'antd'
+import { Card, Button, Icon } from 'antd'
 import PostHeader from './PostHeader'
 
-export default function Post({ post, user, computeTime, openDrawer, hideView=false }) {
+export default function Post({ post, user, computeTime, openDrawer, hideView=false, hideActions = false }) {
     return (
         <Card
             title={
@@ -14,6 +14,12 @@ export default function Post({ post, user, computeTime, openDrawer, hideView=fal
                     hideView={hideView}
                 />
             }
+            actions={
+                !hideActions ? [
+                <Button type="link" icon="like">Like</Button>,
+                <Button  type="link" icon="message">Comment</Button>,
+                <Button  type="link" icon="share">Share</Button>
+            ]: []}
             className="post-cards"
         >
             {post.content}

@@ -52,7 +52,7 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
-module.exports = function(webpackEnv) {
+module.exports = function(webpackEnv, isMobile=false) {
   const isEnvDevelopment = webpackEnv === 'development';
   const isEnvProduction = webpackEnv === 'production';
 
@@ -169,7 +169,7 @@ module.exports = function(webpackEnv) {
     ].filter(Boolean),
     output: {
       // The build folder.
-      path: isEnvProduction ? paths.appBuild : undefined,
+      path: isEnvProduction ? (isMobile?paths.appCordovaBuild:paths.appBuild) : undefined,
       // Add /* filename */ comments to generated require()s in the output.
       pathinfo: isEnvDevelopment,
       // There will be one main bundle, and one file per asynchronous chunk.

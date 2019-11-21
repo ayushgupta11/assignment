@@ -1,7 +1,15 @@
 .header-container{
-    background: #fff;
+    background: #29487d;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     justify-content: space-between;
+    color: #fff;
     align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .header-container {
+      flex-direction: column;
+      height: 120px;
+    }
 }

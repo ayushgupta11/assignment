@@ -1,5 +1,6 @@
 .posts-container{
     margin: 20px;
+    background: #e9ebee;
     // width: 100%;
 }
 .new-post-title{
@@ -24,4 +25,12 @@
 }
 .post-details{
     margin-left: 10px;
+}
+.post-description{
+    .ant-drawer-content{
+        background: #e9ebee;
+    }
+}
+.post-name{
+    color: #385898;
 }

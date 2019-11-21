@@ -8,14 +8,31 @@ export default class Comments extends Component {
         return moment(date).fromNow()
     }
     render() {
+        let groupedComments = [...this.props.comments]
+        let groupedCommentsObj = {}
+        groupedComments.forEach((comment) => {
+            comment['children'] = []
+            groupedCommentsObj[comment._id] = comment
+        })
+        Object.values(groupedCommentsObj).forEach((comment) => {
+            if(comment.replyTo != null){
+                groupedCommentsObj[comment.replyTo].children.push(comment)
+                delete groupedCommentsObj[comment._id]
+            }
+        })
         return (
             <div>
                 <AddComment addComment={this.props.addComment} />
                 {
                     this.props.comments.length ?
-                    this.props.comments.map((comment) => {
+                    Object.values(groupedCommentsObj).map((comment) => {
                         return (
-                            <Comment computeTime={this.computeTime} comment={comment} key={comment._id} />
+                            <Comment
+                                computeTime={this.computeTime} 
+                                comment={comment} 
+                                key={comment._id}
+                                addComment={this.props.addComment}
+                            />
                         )
                     })
                     :

@@ -9,7 +9,7 @@ export default function PostHeader({ name, timestamp, viewPost, post, hideView }
                     <Avatar icon="user" />
                 </div>
                 <div className="post-details">
-                    <div>{name}</div>
+                    <div className="post-name">{name}</div>
                     <div className="post-time">{ timestamp }</div>
                 </div>
             </div>
